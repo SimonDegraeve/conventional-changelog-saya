@@ -1,0 +1,88 @@
+exports[`preset integration outputs breaking and deprecating changes 1`] = `
+"<a name=\"1.0.0\"></a>
+## 1.0.0
+> 1970-01-01
+
+* [1000003](https://github.com/my-user/my-module/commit/1000003) **Feature/Breaking:** Add feature 1
+* [1000004](https://github.com/my-user/my-module/commit/1000004) **Feature/Deprecating:** Add feature 2
+* [1000005](https://github.com/my-user/my-module/commit/1000005) **Feature/Breaking:** Add feature 3
+* [1000006](https://github.com/my-user/my-module/commit/1000006) **Feature/Deprecating:** Add feature 4
+
+### Deprecating Changes
+
+* This is a deprecating change 1
+
+### Breaking Changes
+
+* This is a breaking change 1
+
+
+"
+`;
+
+exports[`preset integration outputs linked references 1`] = `
+"<a name=\"1.0.0\"></a>
+## 1.0.0
+> 1970-01-01
+
+* [1000007](https://github.com/my-user/my-module/commit/1000007) **Bugfix:** Fix bug [#1](https://github.com/my-user/my-module/issues/1)
+
+
+"
+`;
+
+exports[`preset integration outputs multiple versions 1`] = `
+"<a name=\"Unreleased\"></a>
+## Unreleased
+> 1970-01-01
+
+
+
+<a name=\"2.0.0\"></a>
+## [2.0.0](https://github.com/my-user/my-module/compare/v1.1.0...v2.0.0)
+> 2016-10-06
+
+* [1000008](https://github.com/my-user/my-module/commit/1000008) **Feature:** Add feature 1
+
+
+<a name=\"1.1.0\"></a>
+## [1.1.0](https://github.com/my-user/my-module/compare/1000009...v1.1.0)
+> 2016-10-06
+
+* [1000009](https://github.com/my-user/my-module/commit/1000009) **Bugfix:** Fix bug [#1](https://github.com/my-user/my-module/issues/1)
+
+
+"
+`;
+
+exports[`preset integration outputs only commit with a valid type 1`] = `
+"<a name=\"1.0.0\"></a>
+## 1.0.0
+> 1970-01-01
+
+* [1000001](https://github.com/my-user/my-module/commit/1000001) **Feature:** Add feature 1
+* [1000002](https://github.com/my-user/my-module/commit/1000002) **Bugfix:** Fix bug 1
+
+
+"
+`;
+
+exports[`preset integration works with a package.json 1`] = `
+"<a name=\"1.0.0\"></a>
+## 1.0.0
+> 1970-01-01
+
+
+
+"
+`;
+
+exports[`preset integration works with no package.json 1`] = `
+"<a name=\"Unreleased\"></a>
+## Unreleased
+> 1970-01-01
+
+
+
+"
+`;

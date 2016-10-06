@@ -1,0 +1,17 @@
+{
+  "ignore": [
+    "**/node_modules/**"
+  ],
+  "critics": {
+    "lint": { "engine": "none" }
+  },
+  "test": [
+    "*.test.js",
+    "__*__"
+  ],
+  "dependencies": {
+    "unused-ignores": [
+    
+    ]
+  }
+}
