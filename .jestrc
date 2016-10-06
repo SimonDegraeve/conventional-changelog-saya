@@ -1,5 +1,4 @@
 {
-  "coverageDirectory": "node_modules/.coverage",
   "cacheDirectory": "node_modules/.cache",
   "testEnvironment": "node",
   "collectCoverageFrom": [

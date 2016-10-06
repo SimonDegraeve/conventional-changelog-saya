@@ -8,7 +8,8 @@ notifications:
 node_js:
   - 'node'
 before_install:
-  - npm i -g npm@^3.0.0
+  - git config --global user.email "simon.degraeve@gmail.com"
+  - git config --global user.name "Simon Degraeve"
 before_script:
   - npm prune
 script:
