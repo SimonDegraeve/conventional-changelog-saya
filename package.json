@@ -17,31 +17,23 @@
     "saya"
   ],
   "scripts": {
-    "lint": "eslint src",
-    "test": "jest --config .jestrc --coverage",
-    "clean": "rimraf lib",
-    "transpile": "babel --copy-files --out-dir lib --ignore *.test.js,__*__ src",
-    "build": "npm run clean && npm run transpile",
-    "report-coverage": "codecov",
-    "release": "terbit --changelog-preset ./lib/index.js"
+    "lint": "kode lint",
+    "test": "kode test",
+    "build": "kode build",
+    "report-coverage": "kode report-coverage",
+    "release": "kode release"
   },
   "dependencies": {
     "conventional-changelog-core": "^1.5.0",
     "runtime-nodent": "github:simondegraeve/runtime-nodent"
   },
   "devDependencies": {
-    "babel-cli": "^6.16.0",
-    "babel-jest": "^16.0.0",
-    "babel-preset-saya": "*",
-    "codecov": "^1.0.1",
     "conventional-changelog-core": "^1.5.0",
-    "eslint": "^3.7.1",
-    "eslint-config-saya": "*",
-    "jest": "^16.0.1",
+    "execa": "^0.5.0",
+    "kode": "^2.0.1",
     "mockdate": "^1.0.4",
-    "rimraf": "^2.5.4",
-    "terbit": "*",
     "through2": "^2.0.1",
-    "tmp": "0.0.29"
+    "tmp": "0.0.29",
+    "write-pkg": "^1.0.0"
   }
 }
