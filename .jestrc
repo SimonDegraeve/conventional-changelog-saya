@@ -4,6 +4,10 @@
   "collectCoverageFrom": [
     "src/**/*.js"
   ],
+  "coveragePathIgnorePatterns": [
+    "src/index.js",
+    "src/cli.js"
+  ],
   "coverageThreshold": {
     "global": {
       "branches": 100,
