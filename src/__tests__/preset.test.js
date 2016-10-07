@@ -178,7 +178,7 @@ describe('writer', () => {
     expect(result.extraContext).toBe('ok');
   });
 
-  it('adds compare link ', async () => {
+  it('adds comparison link ', async () => {
     const { writerOpts } = await preset;
     const result = writerOpts.finalizeContext({
       version: '1.0.0',
@@ -192,6 +192,15 @@ describe('writer', () => {
       versionLink: '[1.0.0](/compare/0.0.1...1.0.0)',
       linkCompare: true,
     });
+  });
+
+  it('skips comparison link ', async () => {
+    const { writerOpts } = await preset;
+    const result = writerOpts.finalizeContext({
+      version: '1.0.0',
+      linkCompare: false,
+    }, {}, [], undefined, []);
+    expect(result.versionLink).toBe('1.0.0');
   });
 
   it('sorts commits in reverse order', async () => {

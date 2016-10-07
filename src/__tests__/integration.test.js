@@ -51,7 +51,7 @@ const replaceHashes = changelog => changelog.replace(/[0-9a-f]{7}/g, hash => (
 /**
  *
  */
-const getChangelog = command => () => {
+const getChangelog = (command, contextOpts) => () => {
   const code = `
     var changelog = require(
      '${resolvePath(__dirname, '../../node_modules/conventional-changelog-core')}'
@@ -68,7 +68,7 @@ const getChangelog = command => () => {
 
     mockDate.set(0); // 1970-01-01
 
-    changelog({ config: preset, releaseCount: 0, outputUnreleased: true })
+    changelog({ config: preset, releaseCount: 0, outputUnreleased: true }, ${JSON.stringify(contextOpts).replace(/"/g, '\\"')})
      .on('error', error =>
        console.error(error)
      )
@@ -84,37 +84,38 @@ const getChangelog = command => () => {
 /**
  *
  */
-const createRepository = ({ withPkg = false } = {}) => new Promise((resolve, reject) => {
-  createDirectory({ unsafeCleanup: true }, async (error, path) => {
-    if (error) {
-      return reject(error);
-    }
+const createRepository = ({ withPkg = false, contextOpts = {} } = {}) =>
+  new Promise((resolve, reject) => {
+    createDirectory({ unsafeCleanup: true }, async (error, path) => {
+      if (error) {
+        return reject(error);
+      }
 
-    const command = createCommand(path);
-    await command('git init');
+      const command = createCommand(path);
+      await command('git init');
 
-    if (withPkg) {
-      const pkg = JSON.stringify({
-        name: 'my-module',
-        version: '1.0.0',
-        repository: {
-          type: 'git',
-          url: 'git+https://github.com/my-user/my-module',
-        },
+      if (withPkg) {
+        const pkg = JSON.stringify({
+          name: 'my-module',
+          version: '1.0.0',
+          repository: {
+            type: 'git',
+            url: 'git+https://github.com/my-user/my-module',
+          },
+        });
+
+        await command(`echo '${pkg}' > package.json`);
+      }
+
+      return resolve({
+        path,
+        command,
+        name: basename(path),
+        commit: createCommitCommand(command),
+        changelog: getChangelog(command, contextOpts),
       });
-
-      await command(`echo '${pkg}' > package.json`);
-    }
-
-    return resolve({
-      path,
-      command,
-      name: basename(path),
-      commit: createCommitCommand(command),
-      changelog: getChangelog(command),
     });
   });
-});
 
 
 /**
@@ -162,12 +163,9 @@ describe('preset integration', () => {
     expect(result).toMatchSnapshot();
   });
 
-  it('outputs multiple versions', async () => {
-    const { commit, changelog, command } = await createRepository({ withPkg: true });
-    await commit(['fix: Fix bug #1']);
-    await command('npm version minor');
+  it('outputs comparison links', async () => {
+    const { commit, changelog } = await createRepository({ withPkg: true, contextOpts: { previousTag: '0.0.5' } });
     await commit('add: Add feature 1');
-    await command('npm version major');
     const result = await changelog();
     expect(result).toMatchSnapshot();
   });

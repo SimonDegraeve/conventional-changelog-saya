@@ -20,36 +20,34 @@ exports[`preset integration outputs breaking and deprecating changes 1`] = `
 "
 `;
 
+exports[`preset integration outputs comparison links 1`] = `
+"<a name=\"1.0.0\"></a>
+## [1.0.0](https://github.com/my-user/my-module/compare/0.0.5...v1.0.0)
+> 1970-01-01
+
+* [1000008](https://github.com/my-user/my-module/commit/1000008) **Feature:** Add feature 1
+
+
+"
+`;
+
+exports[`preset integration outputs comparison links 2`] = `
+"<a name="1.0.0"></a>
+## [1.0.0](https://github.com/my-user/my-module/compare/0.0.5...v1.0.0)
+> 1970-01-01
+
+* [1000008](https://github.com/my-user/my-module/commit/1000008) **Feature:** Add feature 1
+
+
+"
+`;
+
 exports[`preset integration outputs linked references 1`] = `
 "<a name=\"1.0.0\"></a>
 ## 1.0.0
 > 1970-01-01
 
 * [1000007](https://github.com/my-user/my-module/commit/1000007) **Bugfix:** Fix bug [#1](https://github.com/my-user/my-module/issues/1)
-
-
-"
-`;
-
-exports[`preset integration outputs multiple versions 1`] = `
-"<a name=\"Unreleased\"></a>
-## Unreleased
-> 1970-01-01
-
-
-
-<a name=\"2.0.0\"></a>
-## [2.0.0](https://github.com/my-user/my-module/compare/v1.1.0...v2.0.0)
-> 2016-10-06
-
-* [1000008](https://github.com/my-user/my-module/commit/1000008) **Feature:** Add feature 1
-
-
-<a name=\"1.1.0\"></a>
-## [1.1.0](https://github.com/my-user/my-module/compare/1000009...v1.1.0)
-> 2016-10-06
-
-* [1000009](https://github.com/my-user/my-module/commit/1000009) **Bugfix:** Fix bug [#1](https://github.com/my-user/my-module/issues/1)
 
 
 "
