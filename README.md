@@ -1,5 +1,5 @@
 # conventional-changelog-saya
-Opinionated [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog) preset
+An opinionated `conventional-changelog` preset
 
 [![NPM Version][npm-img]][npm-link]
 [![Licence][licence-img]][licence-link]
