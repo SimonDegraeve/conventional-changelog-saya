@@ -2,7 +2,8 @@
  *
  */
 import { dir as createDirectory } from 'tmp';
-import { exec } from 'child_process';
+import exec from 'execa';
+import writePkg from 'write-pkg';
 import { resolve as resolvePath, basename } from 'path';
 
 
@@ -15,26 +16,10 @@ jasmine.DEFAULT_TIMEOUT_INTERVAL = 20000; // eslint-disable-line no-undef
 /**
  *
  */
-const createCommand = path => command => new Promise((resolve, reject) => {
-  exec(command, { cwd: path }, (error, stdout, stderr) => {
-    if (error) {
-      return reject(error);
-    }
-    if (stderr) {
-      return reject(stderr);
-    }
-    return resolve(stdout);
-  });
-});
-
-
-/**
- *
- */
 const createCommitCommand = command => (message) => {
   const messages = Array.isArray(message) ? message : [message];
-  const args = messages.reduce((result, value) => (`${result} --message "${value}"`), '');
-  return command(`git commit --allow-empty ${args}`);
+  const args = messages.reduce((result, value) => ([...result, '--message', value]), []);
+  return command('git', ['commit', '--allow-empty', ...args]);
 };
 
 
@@ -68,7 +53,7 @@ const getChangelog = (command, contextOpts) => () => {
 
     mockDate.set(0); // 1970-01-01
 
-    changelog({ config: preset, releaseCount: 0, outputUnreleased: true }, ${JSON.stringify(contextOpts).replace(/"/g, '\\"')})
+    changelog({ config: preset, releaseCount: 0, outputUnreleased: true }, ${JSON.stringify(contextOpts)})
      .on('error', error =>
        console.error(error)
      )
@@ -77,7 +62,7 @@ const getChangelog = (command, contextOpts) => () => {
        callback(null, chunk)
      }));
  `;
-  return command(`babel-node --eval "${code}"`).then(replaceHashes);
+  return command('babel-node', ['--eval', code]).then(({ stdout }) => replaceHashes(stdout));
 };
 
 
@@ -91,20 +76,18 @@ const createRepository = ({ withPkg = false, contextOpts = {} } = {}) =>
         return reject(error);
       }
 
-      const command = createCommand(path);
-      await command('git init');
+      const command = (...args) => exec(...args, { cwd: path, env: process.env });
+
+      await command('git', ['config', '--global', 'user.email', 'user@email.com']);
+      await command('git', ['config', '--global', 'user.name', 'user']);
+      await command('git', ['init']);
 
       if (withPkg) {
-        const pkg = JSON.stringify({
+        await writePkg(path, {
           name: 'my-module',
           version: '1.0.0',
-          repository: {
-            type: 'git',
-            url: 'git+https://github.com/my-user/my-module',
-          },
+          repository: 'github:my-user/my-module',
         });
-
-        await command(`echo '${pkg}' > package.json`);
       }
 
       return resolve({
