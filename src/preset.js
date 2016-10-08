@@ -33,13 +33,15 @@ const getTemplate = () => `{{!-- --}}
  *
  */
 const getTypeMapping = () => ({
-  add: { name: 'Feature', isVisible: true },
-  change: { name: 'Refactoring', isVisible: true },
+  feat: { name: 'Feature', isVisible: true },
+  tweak: { name: 'Tweak', isVisible: true },
   fix: { name: 'Bugfix', isVisible: true },
-  update: { name: 'Dependency', isVisible: true },
+  dependency: { name: 'Dependency', isVisible: true },
   revert: { name: 'Revert', isVisible: true },
   release: { name: 'Release', isVisible: false },
-  extra: { name: 'Extraneous', isVisible: false },
+  test: { name: 'Test', isVisible: false },
+  doc: { name: 'Documentation', isVisible: false },
+  noop: { name: 'Extraneous', isVisible: false },
 });
 
 
@@ -202,7 +204,7 @@ const getRecommendedBump = (commits) => {
     if (isBreakingChange(commit)) {
       level = MAJOR_LEVEL;
     }
-    else if (commit.type === 'add' && level === PATCH_LEVEL) {
+    else if (commit.type === 'feat' && level === PATCH_LEVEL) {
       level = MINOR_LEVEL;
     }
   });

@@ -8,10 +8,10 @@ import preset from '../preset';
  *
  */
 const createCommit = (options = {}) => ({
-  type: 'add',
+  type: 'feat',
   subject: 'Add feature 1',
   merge: null,
-  header: 'add: Add feature 1',
+  header: 'feat: Add feature 1',
   body: null,
   footer: null,
   notes: [],
@@ -77,14 +77,14 @@ describe('writer', () => {
 
   it('normalizes commit type', async () => {
     const { writerOpts } = await preset;
-    const commit = createCommit({ type: 'add' });
+    const commit = createCommit({ type: 'feat' });
     const result = writerOpts.transform(commit, createContext());
     expect(result.type).toBe('Feature');
   });
 
   it('normalizes commit type', async () => {
     const { writerOpts } = await preset;
-    const commit = createCommit({ type: 'add' });
+    const commit = createCommit({ type: 'feat' });
     const result = writerOpts.transform(commit, createContext());
     expect(result.type).toBe('Feature');
   });
@@ -236,7 +236,7 @@ describe('whatBump', () => {
 
   it('recommends a minor version', async () => {
     const { whatBump } = await preset;
-    const commit = createCommit({ type: 'add' });
+    const commit = createCommit({ type: 'feat' });
     const result = whatBump([commit]);
     expect(result).toBe(1);
   });
