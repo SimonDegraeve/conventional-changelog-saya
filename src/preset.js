@@ -9,6 +9,7 @@ import { concat } from './utils';
  *
  */
 const getTemplate = () => `{{!-- --}}
+{{#if commitGroups.length}}
 <a name="{{version}}"></a>
 ## {{versionLink}}
 > {{date}}
@@ -26,7 +27,8 @@ const getTemplate = () => `{{!-- --}}
 * {{text}}
 {{/each}}
 
-{{/each}}`;
+{{/each}}
+{{/if}}`;
 
 
 /**
