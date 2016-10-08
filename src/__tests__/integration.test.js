@@ -77,9 +77,6 @@ const createRepository = ({ withPkg = false, contextOpts = {} } = {}) =>
       }
 
       const command = (...args) => exec(...args, { cwd: path, env: process.env });
-
-      await command('git', ['config', '--global', 'user.email', 'user@email.com']);
-      await command('git', ['config', '--global', 'user.name', 'user']);
       await command('git', ['init']);
 
       if (withPkg) {

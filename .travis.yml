@@ -7,6 +7,9 @@ notifications:
   email: false
 node_js:
   - 'node'
+before_install:
+  - git config --global user.email "simon.degraeve@gmail.com"
+  - git config --global user.name "Simon Degraeve" 
 before_script:
   - npm prune
 script:
