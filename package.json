@@ -28,6 +28,6 @@
     "runtime-nodent": "github:simondegraeve/runtime-nodent#v3.0.0"
   },
   "devDependencies": {
-    "kode": "^2.0.1"
+    "kode": "^2.1.0"
   }
 }
