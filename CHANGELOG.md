@@ -1,3 +1,9 @@
+<a name="2.0.0"></a>
+## [2.0.0](https://github.com/simondegraeve/conventional-changelog-saya/compare/v1.0.3...v2.0.0)
+> 2016-10-08
+
+* [0c0d830](https://github.com/simondegraeve/conventional-changelog-saya/commit/0c0d830) **Bugfix:** Re-publish to NPM
+
 <a name="1.0.3"></a>
 ## [1.0.3](https://github.com/simondegraeve/conventional-changelog-saya/compare/v1.0.2...v1.0.3)
 > 2016-10-08
