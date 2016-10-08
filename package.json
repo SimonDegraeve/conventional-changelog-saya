@@ -1,6 +1,6 @@
 {
   "name": "conventional-changelog-saya",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An opinionated `conventional-changelog` preset",
   "license": "MIT",
   "author": "Simon Degrave <simon.degraeve@gmail.com>",

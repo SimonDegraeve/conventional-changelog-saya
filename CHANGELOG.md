@@ -1,3 +1,8 @@
+<a name="1.0.3"></a>
+## [1.0.3](https://github.com/simondegraeve/conventional-changelog-saya/compare/v1.0.2...v1.0.3)
+> 2016-10-08
+
+
 <a name="1.0.2"></a>
 ## [1.0.2](https://github.com/simondegraeve/conventional-changelog-saya/compare/v1.0.1...v1.0.2)
 > 2016-10-08
