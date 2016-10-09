@@ -1,7 +1,7 @@
 /**
  *
  */
-import preset from '../preset';
+import preset from '../';
 
 
 /**
