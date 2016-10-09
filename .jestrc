@@ -5,7 +5,6 @@
     "src/**/*.js"
   ],
   "coveragePathIgnorePatterns": [
-    "src/index.js",
     "src/cli.js"
   ],
   "coverageThreshold": {
