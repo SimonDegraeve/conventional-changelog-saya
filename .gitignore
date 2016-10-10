@@ -24,4 +24,3 @@ composer.lock
 node_modules
 *.log
 lib
-coverage

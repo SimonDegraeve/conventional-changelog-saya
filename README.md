@@ -1,16 +1,14 @@
 # conventional-changelog-saya
-An opinionated `conventional-changelog` preset
+> An opinionated `conventional-changelog` preset
 
 [![NPM Version][npm-img]][npm-link]
 [![Licence][licence-img]][licence-link]
 [![Build Status][travis-img]][travis-link]
 [![Coverage Status][codecov-img]][codecov-link]
-[![Dependency Status][david-img]][david-link]
+[![Dependency Status][gemnasium-img]][gemnasium-link]
 
 
-## Installation
-
-Using [npm](https://www.npmjs.com):
+## Install
 
 ```
 npm install conventional-changelog-saya
@@ -29,5 +27,5 @@ npm install conventional-changelog-saya
 [codecov-img]: https://img.shields.io/codecov/c/github/SimonDegraeve/conventional-changelog-saya/master.svg?style=flat-square
 [codecov-link]: https://codecov.io/github/SimonDegraeve/conventional-changelog-saya?branch=master
 
-[david-img]: https://img.shields.io/david/SimonDegraeve/conventional-changelog-saya.svg?style=flat-square
-[david-link]: https://david-dm.org/SimonDegraeve/conventional-changelog-saya
+[gemnasium-img]: https://img.shields.io/gemnasium/SimonDegraeve/conventional-changelog-saya.svg?style=flat-square
+[gemnasium-link]: https://gemnasium.com/github.com/SimonDegraeve/conventional-changelog-saya

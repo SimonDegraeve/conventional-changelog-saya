@@ -28,6 +28,17 @@
     "nodent-runtime": "^3.0.0"
   },
   "devDependencies": {
-    "kode": "^2.2.0"
+    "kode": "^2.3.2"
+  },
+  "babel": {
+    "presets": [
+      "saya"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "saya"
+  },
+  "jest": {
+    "preset": "jest-preset-saya"
   }
 }
