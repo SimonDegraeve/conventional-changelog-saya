@@ -50,7 +50,7 @@ const getTypeMapping = () => ({
 /**
  *
  */
-const getVersionLink = (context) => {
+const getVersionLink = context => {
   const text = context.version;
   const link = concat([
     context.host, '/', context.owner, '/', context.repository,
@@ -195,14 +195,14 @@ const getWriterOptions = config => ({
 /**
  *
  */
-const getRecommendedBump = (commits) => {
+const getRecommendedBump = commits => {
   const MAJOR_LEVEL = 0;
   const MINOR_LEVEL = 1;
   const PATCH_LEVEL = 2;
 
   let level = PATCH_LEVEL;
 
-  commits.forEach((commit) => {
+  commits.forEach(commit => {
     if (isBreakingChange(commit)) {
       level = MAJOR_LEVEL;
     }

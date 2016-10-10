@@ -138,7 +138,7 @@ describe('writer', () => {
     const commit = createCommit({ subject: 'Change something (#3)' });
     const result = writerOpts.transform(commit, createContext());
     expect(result.subject).toBe(
-      'Change something ([#3](https://github.com/my-user/my-module/issues/3))'
+      'Change something ([#3](https://github.com/my-user/my-module/issues/3))',
     );
   });
 
@@ -167,7 +167,7 @@ describe('writer', () => {
     });
     const result = writerOpts.transform(commit, createContext());
     expect(result.subject).toBe(
-      'Change something, close [#3](https://github.com/my-user/my-module/issues/3)'
+      'Change something, close [#3](https://github.com/my-user/my-module/issues/3)',
     );
     expect(result.references.length).toBe(1);
   });
