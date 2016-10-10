@@ -1,3 +1,9 @@
+<a name="2.0.3"></a>
+## [2.0.3](https://github.com/simondegraeve/conventional-changelog-saya/compare/v2.0.2...v2.0.3)
+> 2016-10-10
+
+* [17c3a4a](https://github.com/simondegraeve/conventional-changelog-saya/commit/17c3a4a) **Tweak:** Cleanup and update kode
+
 <a name="2.0.2"></a>
 ## [2.0.2](https://github.com/simondegraeve/conventional-changelog-saya/compare/v2.0.1...v2.0.2)
 > 2016-10-09
