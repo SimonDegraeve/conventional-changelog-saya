@@ -28,7 +28,7 @@
     "nodent-runtime": "^3.0.1"
   },
   "devDependencies": {
-    "kode": "^2.4.1"
+    "kode": "^2.4.5"
   },
   "babel": {
     "presets": [
