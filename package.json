@@ -1,12 +1,20 @@
 {
   "name": "conventional-changelog-saya",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "An opinionated `conventional-changelog` preset",
   "license": "MIT",
-  "author": "Simon Degrave <simon.degraeve@gmail.com>",
-  "repository": "github:SimonDegraeve/conventional-changelog-saya",
+  "author": {
+    "name": "Simon Degrave",
+    "email": "simon.degraeve@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simondegraeve/conventional-changelog-saya.git"
+  },
   "homepage": "https://github.com/SimonDegraeve/conventional-changelog-saya#readme",
-  "bugs": "https://github.com/SimonDegraeve/conventional-changelog-saya/issues",
+  "bugs": {
+    "url": "https://github.com/SimonDegraeve/conventional-changelog-saya/issues"
+  },
   "main": "lib/index.js",
   "files": [
     "lib"
@@ -40,5 +48,7 @@
   },
   "jest": {
     "preset": "jest-preset-saya"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "conventional-changelog-saya@2.0.3"
 }
