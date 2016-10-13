@@ -1,5 +1,12 @@
+<a name="2.0.5"></a>
+## [2.0.5](https://github.com/simondegraeve/conventional-changelog-saya/compare/v2.0.4...v2.0.5)
+> 2016-10-13
+
+* [a672249](https://github.com/simondegraeve/conventional-changelog-saya/commit/a672249) **Bugfix:** Restore package.json
+* [2c0e03e](https://github.com/simondegraeve/conventional-changelog-saya/commit/2c0e03e) **Dependency:** Update kode
+
 <a name="2.0.4"></a>
-## 2.0.4
+## [2.0.4](https://github.com/simondegraeve/conventional-changelog-saya/compare/7150817...v2.0.4)
 > 2016-10-13
 
 * [7150817](https://github.com/simondegraeve/conventional-changelog-saya/commit/7150817) **Bugfix:** Stop messing up with git config during tests
